@@ -8,6 +8,7 @@
 
 (meditations
   "Calling a function is like giving it a hug with parentheses"
+<<<<<<< HEAD
   (= 81 (square 9))
 
   "Functions are usually defined before they are used"
@@ -26,6 +27,24 @@
 
   "Arguments can also be skipped"
   (= 30 (#(* 15 %2) 1 2))
+=======
+  (= __ (square 9))
+
+  "Functions are usually defined before they are used"
+  (= __ (multiply-by-ten 2))
+
+  "But they can also be defined inline"
+  (= __ ((fn [n] (* 5 n)) 2))
+
+  "Or using an even shorter syntax"
+  (= __ (#(* 15 %) 4))
+
+  "Even anonymous functions may take multiple arguments"
+  (= __ (#(+ %1 %2 %3) 4 5 6))
+
+  "Arguments can also be skipped"
+  (= __ (#(* 15 %2) 1 2))
+>>>>>>> 44f37b5c16a627851d652be3716c72d38b1a3bd0
 
   "One function can beget another"
   (= 9 (((fn [] ___)) 4 5))
