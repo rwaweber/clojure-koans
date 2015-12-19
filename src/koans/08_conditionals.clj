@@ -10,22 +10,30 @@
 
 (meditations
   "You will face many decisions"
-  (= __ (if (false? (= 4 5))
+  (= :a (if (false? (= 4 5))
           :a
           :b))
 
   "Some of them leave you no alternative"
-  (= __ (if (> 4 3)
-          []))
+  (= '() (if (> 4 3)
+           ;; empty set
+           []))
+
+  "Reminder that the empty set is not the same thing as nil"
+  (not= '() nil)
+
+  "and that there are multiple notations for the empty set"
+  (= '() [])
 
   "And in such a situation you may have nothing"
-  (= __ (if (nil? 0)
+  (= nil (if (nil? 0)
           [:a :b :c]))
 
   "In others your alternative may be interesting"
   (= :glory (if (not (empty? ()))
               :doom
-              __))
+              :glory
+              ))
 
   "You may have a multitude of possible paths"
   (let [x 5]
