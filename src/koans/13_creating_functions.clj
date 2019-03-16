@@ -5,12 +5,12 @@
 
 (meditations
   "One may know what they seek by knowing what they do not seek"
-  (= [__ __ __] (let [not-a-symbol? (complement symbol?)]
+  (= [true false true] (let [not-a-symbol? (complement symbol?)]
                   (map not-a-symbol? [:a 'b "c"])))
 
   "Praise and 'complement' may help you separate the wheat from the chaff"
   (= [:wheat "wheat" 'wheat]
-       (let [not-nil? ___]
+       (let [not-nil? (fn [x] (not= x nil))]
          (filter not-nil? [nil :wheat nil "wheat" nil 'wheat nil])))
 
   "Partial functions allow procrastination"
